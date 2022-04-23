@@ -61,13 +61,12 @@ export const performSimpleActions = (expression: Array<string | number>) => {
                 } else break
 
             }
+            
             let partLength = number1.length + 1 + number2.length
             let equality = +number1.join('') / +number2.join('')
             expression.splice(indexOfMark - number1.length, partLength, equality)
         }
     }
-
-
 
     for (let i = 0; i < expressionMarksEasy.length; i++) {
         if (expressionMarksEasy[i] === '+') {
@@ -83,6 +82,7 @@ export const performSimpleActions = (expression: Array<string | number>) => {
 
 
             }
+
             for (let n = indexOfMark + 1; n < 10; n++) {
 
                 if (Number.isInteger(+expression[n])) {
@@ -90,6 +90,7 @@ export const performSimpleActions = (expression: Array<string | number>) => {
                 } else break
 
             }
+
             let partLength = number1.length + 1 + number2.length
             let equality = +number1.join('') + +number2.join('')
             expression.splice(indexOfMark - number1.length, partLength, equality)
@@ -108,6 +109,7 @@ export const performSimpleActions = (expression: Array<string | number>) => {
 
 
             }
+
             for (let n = indexOfMark + 1; n < 10; n++) {
 
                 if (Number.isInteger(+expression[n])) {
@@ -115,6 +117,7 @@ export const performSimpleActions = (expression: Array<string | number>) => {
                 } else break
 
             }
+
             let partLength = number1.length + 1 + number2.length
             let equality = +number1.join('') - +number2.join('')
             expression.splice(indexOfMark - number1.length, partLength, equality)

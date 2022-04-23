@@ -5,20 +5,17 @@ type propsType = {
     addButton: Function
     pressedButtons: string[]
     setInputStatus: (boolean: boolean) => void
-    setResult: (result:"Uncorrect" | (string | number)[]) => void
+    setResult: (result: "Uncorrect" | (string | number)[]) => void
 }
 
-export const Buttons: React.FC<propsType> = ({setResult, addButton, pressedButtons, setInputStatus }) => {
+export const Buttons: React.FC<propsType> = ({ setResult, addButton, pressedButtons, setInputStatus }) => {
     useEffect(() => {
         let handleKeyPressEvent = (event: KeyboardEvent) => {
-
             if (event.key === 'Enter') handleExpression(pressedButtons)
 
             if (!((event.key >= '0' && event.key <= '9') || event.key === '-'
                 || event.key === '+' || event.key === '/' || event.key === '*'
-                || event.key === '(' || event.key === ')' )) return
-            
-            
+                || event.key === '(' || event.key === ')')) return
 
             addButton(() => [...pressedButtons, event.key])
         }
@@ -60,7 +57,7 @@ export const Buttons: React.FC<propsType> = ({setResult, addButton, pressedButto
                 <button onClick={() => { addButton(() => [...pressedButtons, '00']) }} >00</button>
                 <button onClick={() => { addButton(() => [...pressedButtons, '0']) }} >0</button>
                 <button>,</button>
-                <button onClick={() => { setResult(handleExpression(pressedButtons))}}>=</button>
+                <button onClick={() => { setResult(handleExpression(pressedButtons)) }}>=</button>
             </div>
         </div>
     )

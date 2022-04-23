@@ -90,7 +90,6 @@ export const getParanthesesExpression = (expression: string[]) => {
                         }
 
                         expression.splice(startIndex, value.length + 2, sum)
-
                         break
                     }
                 }
