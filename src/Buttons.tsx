@@ -9,6 +9,7 @@ type propsType = {
 }
 
 export const Buttons: React.FC<propsType> = ({ setResult, addButton, pressedButtons, setInputStatus }) => {
+
     useEffect(() => {
         let handleKeyPressEvent = (event: KeyboardEvent) => {
             if (event.key === 'Enter') handleExpression(pressedButtons)
